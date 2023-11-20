@@ -8,10 +8,9 @@ const orderTypes = [
   { type: 3, text: '待收货', icon: 'icon-check' },
   { type: 4, text: '待评价', icon: 'icon-comment' }
 ]
-//获取会员信息
+// 获取会员信息
 const memberStore = useMemberStore()
 console.log('memberStore :>> ', memberStore.profile?.avatar)
-console.log('memberStore :>> ', memberStore.profile?.account)
 </script>
 
 <template>
@@ -87,9 +86,9 @@ console.log('memberStore :>> ', memberStore.profile?.account)
           {{ item.text }}
         </navigator>
         <!-- 客服 -->
-        <button class="icon-handset navigator p-0 m-0 bg-transparent leading-[inherit]" open-type="contact"
-          >售后</button
-        >
+        <button class="icon-handset navigator p-0 m-0 bg-transparent leading-[inherit]" open-type="contact">
+          售后
+        </button>
       </view>
     </view>
     <!-- 猜你喜欢 -->
@@ -103,13 +102,16 @@ page {
   overflow: hidden;
   background-color: #f7f7f8;
 }
+
 .viewport {
   height: 100%;
   background-repeat: no-repeat;
   background-image: url(https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/center_bg.png);
   background-size: 100% auto;
 }
+
 /* 用户信息 */
+
 .update {
   padding: 3rpx 10rpx 1rpx;
   color: rgba(255, 255, 255, 0.8);

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 //
 import { useMemberStore } from '@/stores'
+
 const memberStore = useMemberStore()
+
 // 退出登录
 const onLogout = () => {
   // 弹窗提示
@@ -48,9 +50,11 @@ const onLogout = () => {
 page {
   background-color: #f4f4f4;
 }
+
 .viewport {
   padding: 20rpx;
 }
+
 /* 列表 */
 .list {
   padding: 0 20rpx;
@@ -90,6 +94,7 @@ page {
     transform: translateY(-50%);
   }
 }
+
 /* 操作按钮 */
 .action {
   text-align: center;

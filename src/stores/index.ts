@@ -6,6 +6,5 @@ const pinia = createPinia()
 pinia.use(createUnistorage())
 // 默认导出，给 main.ts 使⽤
 export default pinia
-
-// 模块统一导出
+// 模块统⼀导出
 export * from './modules/member'

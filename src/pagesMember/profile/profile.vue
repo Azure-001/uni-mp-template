@@ -18,12 +18,15 @@ const getMemberProfileData = async () => {
     ' ' +
     codeToText[profile.value.countyCode?.replace(/0+$/, '')]
 }
+
 onLoad(() => {
   getMemberProfileData()
 })
+
 const onGenderChange: UniHelper.RadioGroupOnChange = (ev) => {
   profile.value.gender = parseInt(ev.detail.value) as Gender //这里有改，原本是parseInt(ev.detail.value)
 }
+
 // 修改⽣⽇
 const onBirthdayChange: UniHelper.DatePickerOnChange = (ev) => {
   profile.value.birthday = ev.detail.value
@@ -36,6 +39,7 @@ const onFullLocationChange: UniHelper.RegionPickerOnChange = (ev) => {
   // 提交后端更新
   fullLocationCode = ev.detail.code!
 }
+
 const memberStore = useMemberStore()
 // 修改头像
 const onAvatarChange = () => {
@@ -71,6 +75,7 @@ const onAvatarChange = () => {
     }
   })
 }
+
 // 点击保存提交表单
 const onSubmit = async () => {
   const { nickname, gender, birthday, profession } = profile.value
@@ -122,7 +127,6 @@ const onSubmit = async () => {
           <text class="label">性别</text>
           <radio-group @change="onGenderChange">
             <label class="radio">
-              <!-- gender是男或女，不能与1或0比较 -->
               <radio value="0" color="#27ba9b" :checked="profile?.gender === 0" />
               男
             </label>
@@ -168,10 +172,12 @@ const onSubmit = async () => {
     </view>
   </view>
 </template>
+
 <style lang="scss">
 page {
   background-color: #f4f4f4;
 }
+
 .viewport {
   display: flex;
   flex-direction: column;
@@ -180,10 +186,12 @@ page {
   background-size: auto 420rpx;
   background-repeat: no-repeat;
 }
+
 // 导航栏
 .navbar {
   position: relative;
 }
+
 .title {
   height: 40px;
   display: flex;
@@ -193,6 +201,7 @@ page {
   font-weight: 500;
   color: #fff;
 }
+
 .back {
   position: absolute;
   height: 40px;
@@ -204,6 +213,7 @@ page {
   justify-content: center;
   align-items: center;
 }
+
 //头 像
 .avatar {
   text-align: center;
@@ -214,12 +224,14 @@ page {
   justify-content: center;
   align-items: center;
 }
+
 .image {
   width: 160rpx;
   height: 160rpx;
   border-radius: 50%;
   background-color: #eee;
 }
+
 .text {
   display: block;
   padding-top: 20rpx;
@@ -227,15 +239,18 @@ page {
   font-size: 26rpx;
   color: #fff;
 }
+
 //表单
 .form {
   background-color: #f4f4f4;
+
   &-content {
     margin: 20rpx 20rpx 0;
     padding: 0 20rpx;
     border-radius: 10rpx;
     background-color: #fff;
   }
+
   &-item {
     display: flex;
     height: 96rpx;

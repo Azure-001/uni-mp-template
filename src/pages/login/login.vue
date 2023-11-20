@@ -33,7 +33,7 @@ const loginSuccess = (profile: LoginResult) => {
 const onGetphonenumberSimple = async () => {
   console.log(12334)
 
-  const { result } = await postLoginWxMinSimpleAPI('15252886375')
+  const { result } = await postLoginWxMinSimpleAPI('15180107827')
   loginSuccess(result)
 }
 </script>
